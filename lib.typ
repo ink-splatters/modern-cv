@@ -14,19 +14,40 @@
 
 // const icons
 // baseline: -25% shifts icon up to align with text visual center
-#let linkedin-icon = box(baseline: -25%, fa-icon("linkedin", fill: color-darknight))
+#let linkedin-icon = box(baseline: -25%, fa-icon(
+  "linkedin",
+  fill: color-darknight,
+))
 #let github-icon = box(baseline: -25%, fa-icon("github", fill: color-darknight))
 #let gitlab-icon = box(baseline: -25%, fa-icon("gitlab", fill: color-darknight))
-#let bitbucket-icon = box(baseline: -25%, fa-icon("bitbucket", fill: color-darknight))
-#let twitter-icon = box(baseline: -25%, fa-icon("twitter", fill: color-darknight))
-#let google-scholar-icon = box(baseline: -25%, fa-icon("google-scholar", fill: color-darknight))
+#let bitbucket-icon = box(baseline: -25%, fa-icon(
+  "bitbucket",
+  fill: color-darknight,
+))
+#let twitter-icon = box(baseline: -25%, fa-icon(
+  "twitter",
+  fill: color-darknight,
+))
+#let google-scholar-icon = box(baseline: -25%, fa-icon(
+  "google-scholar",
+  fill: color-darknight,
+))
 #let orcid-icon = box(baseline: -25%, fa-icon("orcid", fill: color-darknight))
-#let phone-icon = box(baseline: -25%, fa-icon("square-phone", fill: color-darknight))
-#let email-icon = box(baseline: -25%, fa-icon("envelope", fill: color-darknight))
+#let phone-icon = box(baseline: -25%, fa-icon(
+  "square-phone",
+  fill: color-darknight,
+))
+#let email-icon = box(baseline: -25%, fa-icon(
+  "envelope",
+  fill: color-darknight,
+))
 #let birth-icon = box(baseline: -25%, fa-icon("cake", fill: color-darknight))
 #let homepage-icon = box(baseline: -25%, fa-icon("home", fill: color-darknight))
 #let website-icon = box(baseline: -25%, fa-icon("globe", fill: color-darknight))
-#let address-icon = box(baseline: -25%, fa-icon("location-crosshairs", fill: color-darknight))
+#let address-icon = box(baseline: -25%, fa-icon(
+  "location-crosshairs",
+  fill: color-darknight,
+))
 
 /// Helpers
 
@@ -336,7 +357,7 @@
   let contacts = {
     set box(height: 9pt)
     let items = ()
-    
+
     if "birth" in author {
       items.push(box[
         #birth-icon
