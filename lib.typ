@@ -634,6 +634,7 @@
   font: ("Source Sans Pro", "Source Sans 3"),
   header-font: "Roboto",
   show-footer: true,
+  show-signature: true,
   closing: none,
   paper-size: "a4",
   use-smallcaps: true,
@@ -853,25 +854,29 @@
     )
   }
 
-  let signature = {
-    align(bottom)[
-      #pad(bottom: 2em)[
-        #if ("signature" in author) {
-          author.signature
-        }
-        #text(weight: "light")[#linguify("sincerely", from: lang_data)#if (
-            language != "de"
-          ) [#sym.comma]] \
-        #text(weight: "bold")[#author.firstname #author.lastname] \ \
-      ]
-    ]
-  }
-
   // actual content
   letter-heading
   body
   linebreak()
-  signature
+
+  if show-signature {
+    let signature = {
+      align(bottom)[
+        #pad(bottom: 2em)[
+          #if ("signature" in author) {
+            author.signature
+          }
+          #text(weight: "light")[#linguify("sincerely", from: lang_data)#if (
+              language != "de"
+            ) [#sym.comma]] \
+          #text(weight: "bold")[#author.firstname #author.lastname] \ \
+        ]
+      ]
+    }
+
+    signature
+  }
+
   closing
 }
 
