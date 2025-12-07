@@ -731,7 +731,9 @@
 /// - font (array): The font families of the cover letter
 /// - header-font (array): The font families of the cover letter header
 /// - show-footer (boolean): Whether to show the footer or not
-/// - signaure (content): The signature of the cover letter. You can set this to `none` to show the default signature or remove it completely.
+/// - signature (content): The signature of the cover letter. Set this to
+///   `none` to use the default signature.
+/// - show-signature (boolean): Whether to render the signature block.
 /// - closing (content): The closing of the cover letter. This defaults to "Attached Curriculum Vitae". You can set this to `none` to show the default closing or remove it completely.
 /// - use-smallcaps (boolean): Whether to use small caps formatting throughout the template
 /// - show-address-icon (boolean): Whether to show the address icon
@@ -754,6 +756,7 @@
   header-font: "Roboto",
   show-footer: true,
   signature: none,
+  show-signature: true,
   closing: none,
   paper-size: "a4",
   use-smallcaps: true,
@@ -932,7 +935,10 @@
     set text(weight: "light")
     body
   }
-  signature
+
+  if show-signature {
+    signature
+  }
   closing
 }
 
