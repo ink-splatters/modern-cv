@@ -805,7 +805,7 @@
   let contacts = {
     set box(height: 9pt)
 
-    let separator = [ #box(sym.bar.v) ]
+    let separator = [ #box(baseline: -25%, sym.bar.v) ]
     let author_list = ()
 
     if ("phone" in author) {
