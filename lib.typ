@@ -804,54 +804,61 @@
   let contacts = {
     set box(height: 9pt)
 
-    let separator = [ #box(sym.bar.v) ]
+    let separator = [ #box(align(bottom, sym.bar.v)) ]
     let author_list = ()
 
     if ("phone" in author) {
-      author_list.push[
+      author_list.push(box[
+        #set align(bottom)
         #phone-icon
         #box[#link("tel:" + author.phone)[#author.phone]]
-      ]
+      ])
     }
     if ("email" in author) {
-      author_list.push[
+      author_list.push(box[
+        #set align(bottom)
         #email-icon
         #box[#link("mailto:" + author.email)[#author.email]]
-      ]
+      ])
     }
     if ("github" in author) {
-      author_list.push[
+      author_list.push(box[
+        #set align(bottom)
         #github-icon
         #box[#link("https://github.com/" + author.github)[#author.github]]
-      ]
+      ])
     }
     if ("linkedin" in author) {
-      author_list.push[
+      author_list.push(box[
+        #set align(bottom)
         #linkedin-icon
         #box[
           #link(
             "https://www.linkedin.com/in/" + author.linkedin,
           )[#author.firstname #author.lastname]
         ]
-      ]
+      ])
     }
     if ("orcid" in author) {
-      author_list.push[
+      author_list.push(box[
+        #set align(bottom)
         #orcid-icon
         #box[#link("https://orcid.org/" + author.orcid)[#author.orcid]]
-      ]
+      ])
     }
     if ("website" in author) {
-      author_list.push[
+      author_list.push(box[
+        #set align(bottom)
         #website-icon
         #box[#link(author.website)[#author.website]]
-      ]
+      ])
     }
 
     if ("custom" in author and type(author.custom) == array) {
       for item in author.custom {
         if ("text" in item) {
-          author_list.push[
+          author_list.push(box[
+            #set align(bottom)
             #if ("icon" in item) [
               #box(fa-icon(item.icon, fill: color-darknight))
             ]
@@ -862,7 +869,7 @@
                 #item.text
               ]
             ]
-          ]
+          ])
         }
       }
     }
