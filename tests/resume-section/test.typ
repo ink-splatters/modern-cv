@@ -1,8 +1,8 @@
-#import "@local/modern-cv:0.11.0": *
+#import "../../src/lib.typ": *
 
 // setup the document like we do for the resume
 #let font = "Source Sans 3"
-#set text(font: font, size: 11pt, fill: color-darkgray, fallback: true)
+#set text(font: font, size: 11pt, fill: colors.darkgray, fallback: true)
 
 #set page(
   paper: "a4",
@@ -25,7 +25,7 @@
     #let color = if colored-headers {
       accent-color
     } else {
-      color-darkgray
+      colors.darkgray
     }
     #text[#strong[#text(color)[#it.body.text]]]
     #box(width: 1fr, line(length: 100%))
@@ -34,7 +34,7 @@
 ]
 
 #show heading.where(level: 2): it => {
-  set text(color-darkgray, size: 12pt, style: "normal", weight: "bold")
+  set text(colors.darkgray, size: 12pt, style: "normal", weight: "bold")
   it.body
 }
 
